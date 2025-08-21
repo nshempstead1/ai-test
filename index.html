@@ -955,7 +955,11 @@
                                             <option value="3">3 pages</option>
                                             <option value="4">4 pages</option>
                                             <option value="5">5 pages</option>
-                                            <option value="6">6+ pages - Custom quote</option>
+                                            <option value="6">6 pages</option>
+                                            <option value="7">7 pages</option>
+                                            <option value="8">8 pages</option>
+                                            <option value="9">9 pages</option>
+                                            <option value="10">10+ pages - Custom quote</option>
                                         </select>
                                     </div>
                                     
@@ -1186,7 +1190,7 @@
                 return;
             }
 
-            if (pageCount >= 6) {
+            if (pageCount >= 10) {
                 totalPriceEl.textContent = 'Contact for Custom Quote';
                 priceDisplay.style.display = 'block';
                 return;
@@ -1226,8 +1230,8 @@
                 const additionalServices = document.getElementById('additional-services').value;
                 const translationType = document.getElementById('translation-type').value;
 
-                if (!pageCount || pageCount === "" || pageCount.includes('6+')) {
-                    alert('Please select a valid page count (1-5) to proceed with payment. For 6+ pages, please submit a custom quote request.');
+                if (!pageCount || parseInt(pageCount, 10) >= 10) {
+                    alert('Please select a valid page count (1-9) to proceed with payment. For 10+ pages, please submit a custom quote request.');
                     return;
                 }
 

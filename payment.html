@@ -516,11 +516,12 @@
                                     <label for="document-type">Document Type</label>
                                     <select id="document-type" name="documentType">
                                         <option value="">Select document type</option>
-                                        <option value="birth-certificate">Birth Certificate</option>
-                                        <option value="marriage-certificate">Marriage Certificate</option>
-                                        <option value="diploma">Diploma/Degree</option>
-                                        <option value="transcript">University Transcript</option>
-                                        <option value="passport">Passport</option>
+                                        <option value="uscis-immigration">USCIS Immigration Translation</option>
+                                        <option value="canadian-immigration">Canadian Immigration Translation</option>
+                                        <option value="university-transcripts">University Transcript Translation</option>
+                                        <option value="general-certified">General Certified Translation</option>
+                                        <option value="legal-documents">Legal Document Translation</option>
+                                        <option value="medical-records">Medical Record Translation</option>
                                         <option value="other">Other Document</option>
                                     </select>
                                 </div>
@@ -764,11 +765,13 @@
             if (name) document.getElementById('customer-name').value = name;
             if (email) document.getElementById('customer-email').value = email;
             if (pages) document.getElementById('page-count').value = pages;
+            
             if (type) {
-                // Try to match the passed type with an option value
                 const docTypeSelect = document.getElementById('document-type');
-                const option = Array.from(docTypeSelect.options).find(opt => type.toLowerCase().includes(opt.value.replace('-', ' ')));
-                if(option) docTypeSelect.value = option.value;
+                // Check if the passed 'type' is a valid option value
+                if (Array.from(docTypeSelect.options).some(opt => opt.value === type)) {
+                    docTypeSelect.value = type;
+                }
             }
             
             if (speed) {
