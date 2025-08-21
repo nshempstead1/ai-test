@@ -1,0 +1,6 @@
+{
+  "name": "Corpus Localization",
+  "description": "An AI-powered translation and language services website with a live demo for text summarization using the Gemini API.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

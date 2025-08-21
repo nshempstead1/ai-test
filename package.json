@@ -1,19 +1,22 @@
 {
-  "name": "copy-of-empty",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "corpus-localization-payments",
+  "version": "1.0.0",
+  "description": "Corpus localization service with Stripe payments",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "netlify dev",
+    "build": "npm install",
+    "start": "netlify dev"
   },
   "dependencies": {
-
+    "stripe": "^14.21.0",
+    "@netlify/functions": "^2.6.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
-  }
+    "typescript": "^5.3.0",
+    "@types/node": "^20.10.0"
+  },
+  "keywords": ["corpus", "localization", "payments", "stripe", "netlify"],
+  "author": "Nicholas Hempstead",
+  "license": "MIT"
 }

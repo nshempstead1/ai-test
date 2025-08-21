@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USCIS Certified Translation | Urgent Document Translation | Express 24 Hour Service</title>
+    <meta name="description" content="USCIS certified translation services with 24-hour delivery guarantee. Urgent document translation for immigration, apostille translation services, and express certified translation. Same-day rush available.">
+    <meta name="keywords" content="USCIS certified translation, urgent document translation, express translation 24 hours, apostille translation services, certified translation immigration, same day translation">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-blue: #37474F;
+            --dark-blue: #263238;
+            --cyan-blue: #29B6F6;
+            --light-cyan: #4FC3F7;
+            --green: #4CAF50;
+            --light-green: #66BB6A;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .logo-icon {
+            width: 450px;
+            height: 70px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: transparent;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan-blue);
+        }
+
+        .nav-links a.active {
+            color: var(--cyan-blue);
+            font-weight: 600;
+        }
+
+        /* Page Content Container */
+        main {
+            padding-top: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 50%, var(--green) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--dark-blue);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 60px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            opacity: 0.6;
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card, .pricing-card {
+            background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(41, 182, 246, 0.1);
+        }
+
+        .service-card:hover, .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(41, 182, 246, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--cyan-blue) 0%, var(--green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3, .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card .price, .pricing-card .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--cyan-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--dark-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--light-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--light-cyan);
+        }
+
+        /* Page-specific styles */
+        .page-hero {
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .pricing-card {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--cyan-blue);
+            transform: scale(1.05);
+        }
+
+        .pricing-card .badge {
+            background: var(--cyan-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .logo-icon {
+                width: 300px;
+                height: 50px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hidden content for different pages */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "vite": "https://esm.sh/vite@^7.1.3",
+    "path": "https://esm.sh/path@^0.12.7",
+    "stripe": "https://esm.sh/stripe@^18.4.0",
+    "@netlify/functions": "https://esm.sh/@netlify/functions@^4.2.2"
+  }
+}
+</script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://assets.website-files.com/64955b5e3612255246200782/64955b778332194639d6796c_logo-trans-black.png" alt="Corpus Localization Logo" class="logo-img">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" onclick="showPage('uscis')" class="nav-link" data-page="uscis">USCIS Translation</a></li>
+                <li><a href="#" onclick="showPage('canadian')" class="nav-link" data-page="canadian">Canadian Immigration</a></li>
+                <li><a href="#" onclick="showPage('university')" class="nav-link" data-page="university">University Transcripts</a></li>
+                <li><a href="#" onclick="showPage('pricing')" class="nav-link" data-page="pricing">Pricing</a></li>
+                <li><a href="#quote" class="cta-button" style="font-size: 0.9rem; padding: 10px 20px;">Get Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page-content active">
+            <section class="hero">
+                <div class="container hero-content">
+                    <h1>24-Hour Guaranteed Translation</h1>
+                    <p>Professional certified translation services with guaranteed 24-hour delivery. USCIS certified, university approved, and government accepted translations with same-day rush options available.</p>
+                    <a href="#" onclick="showPage('uscis')" class="cta-button">USCIS Translation</a>
+                    <a href="#" onclick="showPage('canadian')" class="cta-button">Canadian Immigration</a>
+                    <a href="#" onclick="showPage('university')" class="cta-button secondary">University Transcripts</a>
+                </div>
+            </section>
+
+            <section class="trust-section">
+                <div class="container">
+                    <h3>🏆 24-Hour Guarantee • USCIS Certified • University Approved • Government Accepted</h3>
+                    <div class="trust-logos">
+                        <span>USCIS Certified Translation</span>
+                        <span>•</span>
+                        <span>Canadian Immigration Ready</span>
+                        <span>•</span>
+                        <span>University Approved</span>
+                        <span>•</span>
+                        <span>Express 24 Hours</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="container">
+                    <h2 class="section-title">Professional Translation Services</h2>
+                    <p class="section-subtitle">Specialized certified translation services for immigration, education, and official documents with guaranteed acceptance and 24-hour delivery.</p>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🇺🇸</div>
+                            <h3>USCIS Immigration</h3>
+                            <div class="price">Starting $24.95/page</div>
+                            <p>USCIS certified translations with guaranteed acceptance. Birth certificates, marriage certificates, diplomas, and all immigration documents with official certification.</p>
+                            <a href="#" onclick="showPage('uscis')" class="service-link">Learn More</a>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🇨🇦</div>
+                            <h3>Canadian Immigration</h3>
+                            <div class="price">Starting $24.95/page</div>
+                            <p>IRCC certified translations for Canadian immigration. All documents translated to meet Canadian government requirements with official certification letters.</p>
+                            <a href="#" onclick="showPage('canadian')" class="service-link">Learn More</a>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🎓</div>
+                            <h3>University Transcripts</h3>
+                            <div class="price">Starting $24.95/page</div>
+                            <p>University-approved academic document translation. Transcripts, diplomas, and certificates translated for admissions and credential evaluation.</p>
+                            <a href="#" onclick="showPage('university')" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container">
+                    <h2 class="section-title">Why Choose Corpus Localization</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <h3>24-Hour Guarantee</h3>
+                            <p>Standard 24-hour delivery with same-day rush options</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✅</div>
+                            <h3>100% Acceptance</h3>
+                            <p>Guaranteed acceptance or money back</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏆</div>
+                            <h3>Certified Quality</h3>
+                            <p>Professional human translators, no machine translation</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <h3>Secure Process</h3>
+                            <p>Encrypted document handling with confidentiality protection</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="container">
+                    <h2>Trusted Translation Partner</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>$24.95</h3>
+                            <p>Starting Price Per Page</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24hr</h3>
+                            <p>Guaranteed Delivery</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Acceptance Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>65+</h3>
+                            <p>Languages Available</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- USCIS PAGE -->
+        <div id="uscis" class="page-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>USCIS Certified Translation Services</h1>
+                    <p>Official USCIS certified translations with guaranteed acceptance for all immigration documents</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">USCIS Translation Requirements</h2>
+                    <p class="section-subtitle">Our USCIS certified translations meet all official requirements and include signed certification statements guaranteeing accuracy and completeness.</p>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">📄</div>
+                            <h3>Birth Certificates</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>USCIS certified birth certificate translations with official certification letter meeting all immigration requirements.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">💍</div>
+                            <h3>Marriage Certificates</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Certified marriage certificate translations for spousal visas and family reunification applications.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🎓</div>
+                            <h3>Education Documents</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Diplomas, transcripts, and academic records translated with USCIS certification for immigration purposes.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🆔</div>
+                            <h3>Identity Documents</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Passport, national ID, and driver's license translations with official USCIS certification.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🏥</div>
+                            <h3>Medical Records</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Medical reports, vaccination records, and health certificates with certified translations.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">⚖️</div>
+                            <h3>Legal Documents</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Court documents, divorce decrees, adoption papers, and legal contracts with USCIS certification.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="#quote" class="cta-button" style="font-size: 1.2rem; padding: 20px 40px;">Get USCIS Translation Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CANADIAN IMMIGRATION PAGE -->
+        <div id="canadian" class="page-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Canadian Immigration Translation</h1>
+                    <p>IRCC certified translations for all Canadian immigration and citizenship applications</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">IRCC Certified Translation Services</h2>
+                    <p class="section-subtitle">Professional certified translations meeting Immigration, Refugees and Citizenship Canada (IRCC) requirements for all immigration programs.</p>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🍁</div>
+                            <h3>Express Entry Documents</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Certified translations for Express Entry applications including education credentials, work experience letters, and language test results.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">👨‍👩‍👧‍👦</div>
+                            <h3>Family Sponsorship</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Birth certificates, marriage certificates, and relationship documents for family class sponsorship applications.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">💼</div>
+                            <h3>Work Permits</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Employment letters, educational credentials, and professional certificates for work permit applications.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🎓</div>
+                            <h3>Study Permits</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Academic transcripts, diplomas, and financial documents for study permit and student visa applications.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🏠</div>
+                            <h3>Provincial Nominee</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Documents for Provincial Nominee Programs (PNP) including work experience and settlement funds documentation.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🇨🇦</div>
+                            <h3>Citizenship Applications</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Documents for Canadian citizenship applications including proof of residence and identity documents.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="#quote" class="cta-button" style="font-size: 1.2rem; padding: 20px 40px;">Get Canadian Immigration Translation</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- UNIVERSITY TRANSCRIPTS PAGE -->
+        <div id="university" class="page-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>University Transcript Translation</h1>
+                    <p>Certified academic document translation for university admissions and credential evaluation</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">Academic Document Translation Services</h2>
+                    <p class="section-subtitle">University-approved certified translations for academic credentials, admissions applications, and professional licensing.</p>
+                    
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">📊</div>
+                            <h3>University Transcripts</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Official transcript translations with certified accuracy for university admissions and transfer credit evaluation.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🎓</div>
+                            <h3>Degree Certificates</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Bachelor's, Master's, and Doctoral degree certificate translations for academic and professional use.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🏆</div>
+                            <h3>Diploma Translations</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>High school diplomas, trade school certificates, and professional diplomas with certified translation.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">📚</div>
+                            <h3>Academic Records</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Grade reports, course descriptions, and academic achievement records for credential evaluation services.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🔬</div>
+                            <h3>Professional Certificates</h3>
+                            <div class="price">$24.95 per page</div>
+                            <p>Professional licensing documents, trade certifications, and continuing education certificates.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">📝</div>
+                            <h3>Research Documents</h3>
+                            <div class="price">$0.08 per word</div>
+                            <p>Thesis abstracts, research papers, and academic publications for international conferences and journals.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="#quote" class="cta-button" style="font-size: 1.2rem; padding: 20px 40px;">Get University Translation</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PRICING PAGE -->
+        <div id="pricing" class="page-content">
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Premium Translation Pricing</h1>
+                    <p>Transparent, competitive pricing for professional certified translation services</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <h2 class="section-title">Professional Translation Services</h2>
+                    <p class="section-subtitle">Choose the service level that best meets your needs with our transparent pricing structure.</p>
+                    
+                    <div class="services-grid">
+                        <div class="pricing-card">
+                            <h3>Standard Certified</h3>
+                            <div class="price" style="font-size: 2rem; margin: 1rem 0;">$24.95<span style="font-size: 1rem;">/page</span></div>
+                            <ul style="text-align: left; margin: 1.5rem 0; padding-left: 20px;">
+                                <li>✅ 24-hour delivery guarantee</li>
+                                <li>✅ USCIS/IRCC certified</li>
+                                <li>✅ Official certification letter</li>
+                                <li>✅ Professional human translator</li>
+                                <li>✅ Digital delivery included</li>
+                                <li>✅ Free minor revisions</li>
+                            </ul>
+                            <a href="#quote" class="service-link">Order Now</a>
+                        </div>
+                        
+                        <div class="pricing-card featured">
+                            <div class="badge">Most Popular</div>
+                            <h3>Express Rush</h3>
+                            <div class="price" style="font-size: 2rem; margin: 1rem 0;">$37.43<span style="font-size: 1rem;">/page</span></div>
+                            <ul style="text-align: left; margin: 1.5rem 0; padding-left: 20px;">
+                                <li>⚡ 12-hour delivery</li>
+                                <li>✅ Priority processing</li>
+                                <li>✅ USCIS/IRCC certified</li>
+                                <li>✅ Official certification letter</li>
+                                <li>✅ Professional human translator</li>
+                                <li>✅ Digital + express mail option</li>
+                                <li>✅ Unlimited revisions</li>
+                            </ul>
+                            <a href="#quote" class="service-link">Order Express</a>
+                        </div>
+                        
+                        <div class="pricing-card">
+                            <h3>Same Day Premium</h3>
+                            <div class="price" style="font-size: 2rem; margin: 1rem 0;">$49.90<span style="font-size: 1rem;">/page</span></div>
+                            <ul style="text-align: left; margin: 1.5rem 0; padding-left: 20px;">
+                                <li>🚀 2-6 hour delivery</li>
+                                <li>✅ Emergency processing</li>
+                                <li>✅ USCIS/IRCC certified</li>
+                                <li>✅ Official certification letter</li>
+                                <li>✅ Senior translator assigned</li>
+                                <li>✅ Phone consultation included</li>
+                                <li>✅ Unlimited revisions</li>
+                            </ul>
+                            <a href="#quote" class="service-link">Order Premium</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 4rem;">
+                        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--dark-blue);">Additional Services</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <h3>Notarization</h3>
+                                <p style="color: var(--cyan-blue); font-weight: bold;">+$15</p>
+                                <p>Notarized certification for legal proceedings</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Apostille Ready</h3>
+                                <p style="color: var(--cyan-blue); font-weight: bold;">+$10</p>
+                                <p>Formatted for apostille certification</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Physical Mail</h3>
+                                <p style="color: var(--cyan-blue); font-weight: bold;">+$5</p>
+                                <p>Hard copy delivery by mail</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Express Mail</h3>
+                                <p style="color: var(--cyan-blue); font-weight: bold;">+$15</p>
+                                <p>Overnight delivery service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%); padding: 2rem; border-radius: 15px; margin-top: 3rem; text-align: center;">
+                        <h3 style="color: var(--dark-blue); margin-bottom: 1rem;">Volume Discounts Available</h3>
+                        <p>10+ pages: 10% discount | 25+ pages: 15% discount | 50+ pages: 20% discount</p>
+                        <p style="margin-top: 1rem;"><strong>Custom quotes for large projects at $0.08 per word</strong></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- QUOTE FORM SECTION -->
+        <section id="quote" style="padding: 80px 0; background: white;">
+            <div class="container">
+                <h2 class="section-title">Get Your Professional Translation Quote</h2>
+                <p class="section-subtitle">24-hour delivery guarantee • Same-day rush available • 100% acceptance rate</p>
+                
+                <div style="background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%); padding: 3rem; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto;">
+                    <form id="quote-form" name="translation-quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="translation-quote-request">
+                        <p class="hidden" style="display: none;">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="name" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Full Name *</label>
+                                <input id="name" type="text" name="name" required style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="email" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Email Address *</label>
+                                <input id="email" type="email" name="email" required style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="phone" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Phone Number</label>
+                                <input id="phone" type="tel" name="phone" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="service-option" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Service Option *</label>
+                                <select name="service-option" id="service-option" required onchange="toggleQuoteFields()" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                    <option value="">Select service option</option>
+                                    <option value="pay-per-page">Pay Per Page ($24.95/page) - Instant Processing</option>
+                                    <option value="word-quote">Request Quote ($0.08/word) - Same Day Response</option>
+                                    <option value="document-submission">Submit Documents for Custom Quote - Same Day Response</option>
+                                </select>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="translation-type" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Translation Type *</label>
+                                <select name="translation-type" id="translation-type" required style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                    <option value="">Select translation type</option>
+                                    <option value="uscis-immigration">USCIS Immigration Translation</option>
+                                    <option value="canadian-immigration">Canadian Immigration Translation</option>
+                                    <option value="university-transcripts">University Transcript Translation</option>
+                                    <option value="general-certified">General Certified Translation</option>
+                                    <option value="legal-documents">Legal Document Translation</option>
+                                    <option value="medical-records">Medical Record Translation</option>
+                                </select>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="source-language" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Source Language *</label>
+                                <select name="source-language" id="source-language" required style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                    <option value="">Select source language</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="french">French</option>
+                                    <option value="german">German</option>
+                                    <option value="chinese">Chinese (Mandarin)</option>
+                                    <option value="arabic">Arabic</option>
+                                    <option value="russian">Russian</option>
+                                    <option value="portuguese">Portuguese</option>
+                                    <option value="italian">Italian</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="korean">Korean</option>
+                                    <option value="hindi">Hindi</option>
+                                    <option value="vietnamese">Vietnamese</option>
+                                    <option value="other">Other Language</option>
+                                </select>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="target-language" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Target Language *</label>
+                                <select name="target-language" id="target-language" required style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                    <option value="english">English</option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="french">French</option>
+                                    <option value="other">Other Language</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Per-Page Payment Fields -->
+                            <div id="page-fields" style="display: none; grid-column: 1 / -1;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="page-count" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Number of Pages *</label>
+                                        <select name="page-count" id="page-count" onchange="calculateTotal()" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="">Select page count</option>
+                                            <option value="1">1 page</option>
+                                            <option value="2">2 pages</option>
+                                            <option value="3">3 pages</option>
+                                            <option value="4">4 pages</option>
+                                            <option value="5">5 pages</option>
+                                            <option value="6">6+ pages - Custom quote</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="delivery-speed" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Delivery Speed</label>
+                                        <select name="delivery-speed" id="delivery-speed" onchange="calculateTotal()" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="standard">Standard (24 hours)</option>
+                                            <option value="rush">Rush (12 hours)</option>
+                                            <option value="same-day">Same Day (2-6 hours)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="additional-services" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Additional Services</label>
+                                        <select name="additional-services" id="additional-services" onchange="calculateTotal()" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="none">None</option>
+                                            <option value="notarized">Notarized (+$15)</option>
+                                            <option value="apostille">Apostille Ready (+$10)</option>
+                                            <option value="express-mail">Express Mail (+$15)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Price Display -->
+                                <div id="price-display" style="display: none; background: var(--cyan-blue); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; font-size: 1.3rem; font-weight: bold; margin-top: 1.5rem;">
+                                    <span id="total-price">Total: $0.00</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Word-based Quote Fields -->
+                            <div id="word-fields" style="display: none; grid-column: 1 / -1;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="word-count" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Estimated Word Count</label>
+                                        <select name="word-count" id="word-count" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="">Select estimated word count</option>
+                                            <option value="under-250">Under 250 words</option>
+                                            <option value="250-500">250-500 words</option>
+                                            <option value="500-1000">500-1,000 words</option>
+                                            <option value="1000-2500">1,000-2,500 words</option>
+                                            <option value="2500-5000">2,500-5,000 words</option>
+                                            <option value="over-5000">Over 5,000 words</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="complexity" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Document Complexity</label>
+                                        <select name="complexity" id="complexity" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="standard">Standard Text</option>
+                                            <option value="technical">Technical/Specialized</option>
+                                            <option value="legal">Legal/Medical</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Document Submission Fields -->
+                            <div id="document-fields" style="display: none; grid-column: 1 / -1;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="documents" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Upload Documents</label>
+                                        <input id="documents" type="file" name="documents[]" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                        <small style="color: #666; margin-top: 0.5rem;">PDF, Word, Images, Text files. Max 10MB per file.</small>
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column;">
+                                        <label for="quote-type" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Quote Type</label>
+                                        <select name="quote-type" id="quote-type" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                                            <option value="word-based">Word-based pricing ($0.08/word)</option>
+                                            <option value="project-based">Project-based estimate</option>
+                                            <option value="volume-discount">Volume/bulk discount</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column;">
+                                <label for="deadline" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Deadline (if urgent)</label>
+                                <input id="deadline" type="date" name="deadline" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column; grid-column: 1 / -1;">
+                                <label for="project-details" style="margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-blue);">Project Details & Special Requirements</label>
+                                <textarea id="project-details" name="project-details" style="padding: 12px 15px; border: 2px solid #e1e8f0; border-radius: 10px; font-size: 1rem; min-height: 120px; resize: vertical;" placeholder="Please describe your translation project, document types, any special formatting requirements, certification needs, or deadlines. For document submissions, include details about the intended use (USCIS, university, etc.)..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" style="background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 50%, var(--green) 100%); color: white; border: none; padding: 15px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: transform 0.3s ease;">Get Professional Translation Quote</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact & Support</h3>
+                    <p>📧 projects@corpuslocalization.com</p>
+                    <p>📞 +1 (973) 803-2795</p>
+                    <p>🕒 24/7 Customer Support</p>
+                    <p>💬 Same-Day Quotes</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Translation Services</h3>
+                    <p><a href="#" onclick="showPage('uscis')" style="color: var(--light-cyan); text-decoration: none;">USCIS Immigration</a></p>
+                    <p><a href="#" onclick="showPage('canadian')" style="color: var(--light-cyan); text-decoration: none;">Canadian Immigration</a></p>
+                    <p><a href="#" onclick="showPage('university')" style="color: var(--light-cyan); text-decoration: none;">University Transcripts</a></p>
+                    <p><a href="#" onclick="showPage('pricing')" style="color: var(--light-cyan); text-decoration: none;">Pricing</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quality & Guarantees</h3>
+                    <p>🏆 24-Hour Delivery Guarantee</p>
+                    <p>📋 100% Acceptance Rate</p>
+                    <p>💰 Money-Back Guarantee</p>
+                    <p>🔒 Secure Document Handling</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Professional Standards</h3>
+                    <p>✅ Human translators only</p>
+                    <p>⚡ Express delivery available</p>
+                    <p>💵 Transparent pricing</p>
+                    <p>🎯 Government certified</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Corpus Localization LLC. All rights reserved. | Professional certified translation services with 24-hour delivery guarantee.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const newPage = document.getElementById(pageId);
+            if(newPage) {
+                newPage.classList.add('active');
+            }
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update page title
+            const titles = {
+                'home': 'USCIS Certified Translation | Urgent Document Translation | Express 24 Hour Service',
+                'uscis': 'USCIS Certified Translation Services | Immigration Document Translation',
+                'canadian': 'Canadian Immigration Translation | IRCC Certified Translation Services',
+                'university': 'University Transcript Translation | Certified Academic Document Translation',
+                'pricing': 'Translation Pricing | Professional Certified Translation Services'
+            };
+            
+            document.title = titles[pageId] || titles['home'];
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Dynamic form handling
+        function toggleQuoteFields() {
+            const serviceOption = document.getElementById('service-option').value;
+            const pageFields = document.getElementById('page-fields');
+            const wordFields = document.getElementById('word-fields');
+            const documentFields = document.getElementById('document-fields');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            pageFields.style.display = 'none';
+            wordFields.style.display = 'none';
+            documentFields.style.display = 'none';
+            document.getElementById('price-display').style.display = 'none';
+
+            if (serviceOption === 'pay-per-page') {
+                pageFields.style.display = 'block';
+                submitBtn.textContent = 'Pay Now & Start Translation';
+            } else if (serviceOption === 'word-quote') {
+                wordFields.style.display = 'block';
+                submitBtn.textContent = 'Request Word-Based Quote';
+            } else if (serviceOption === 'document-submission') {
+                documentFields.style.display = 'block';
+                submitBtn.textContent = 'Submit Documents for Same-Day Quote';
+            } else {
+                submitBtn.textContent = 'Get Professional Translation Quote';
+            }
+            calculateTotal();
+        }
+
+        // Price calculator
+        function calculateTotal() {
+            const serviceOption = document.getElementById('service-option').value;
+            if (serviceOption !== 'pay-per-page') {
+                 document.getElementById('price-display').style.display = 'none';
+                return;
+            }
+
+            const pageCountEl = document.getElementById('page-count');
+            const deliverySpeedEl = document.getElementById('delivery-speed');
+            const additionalServicesEl = document.getElementById('additional-services');
+            const priceDisplay = document.getElementById('price-display');
+            const totalPriceEl = document.getElementById('total-price');
+
+            const pageCount = parseInt(pageCountEl.value, 10);
+            if (isNaN(pageCount) || pageCount < 1) {
+                priceDisplay.style.display = 'none';
+                return;
+            }
+
+            if (pageCount >= 6) {
+                totalPriceEl.textContent = 'Contact for Custom Quote';
+                priceDisplay.style.display = 'block';
+                return;
+            }
+
+            const deliverySpeed = deliverySpeedEl.value;
+            const additionalServices = additionalServicesEl.value;
+            
+            let pricePerPage = 24.95;
+            if (deliverySpeed === 'rush') pricePerPage = 37.43;
+            else if (deliverySpeed === 'same-day') pricePerPage = 49.90;
+            
+            let basePrice = pricePerPage * pageCount;
+            
+            let addOns = 0;
+            if (additionalServices === 'notarized') addOns = 15;
+            else if (additionalServices === 'apostille') addOns = 10;
+            else if (additionalServices === 'express-mail') addOns = 15;
+            
+            const total = basePrice + addOns;
+            
+            totalPriceEl.textContent = `Total: $${total.toFixed(2)}`;
+            priceDisplay.style.display = 'block';
+        }
+
+        // Form submission logic
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            const serviceOption = document.getElementById('service-option').value;
+            if (serviceOption === 'pay-per-page') {
+                e.preventDefault();
+
+                // Gather form data for payment page
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const pageCount = document.getElementById('page-count').value;
+                const deliverySpeed = document.getElementById('delivery-speed').value;
+                const additionalServices = document.getElementById('additional-services').value;
+                const translationType = document.getElementById('translation-type').value;
+
+                if (!pageCount || pageCount === "" || pageCount.includes('6+')) {
+                    alert('Please select a valid page count (1-5) to proceed with payment. For 6+ pages, please submit a custom quote request.');
+                    return;
+                }
+
+                // Construct URL with query parameters
+                const params = new URLSearchParams({
+                    name: name,
+                    email: email,
+                    pages: pageCount,
+                    speed: deliverySpeed,
+                    addons: additionalServices,
+                    type: translationType
+                });
+
+                // Redirect to payment page
+                window.location.href = `payment.html?${params.toString()}`;
+            }
+            // For other options, the form will submit to Netlify as normal
+        });
+    </script>
+</body>
+</html>

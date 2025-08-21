@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Corpus Localization | Professional Translation Services</title>
+    <meta name="description" content="Secure payment for professional certified translation services. 24-hour delivery guarantee.">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-blue: #37474F;
+            --dark-blue: #263238;
+            --cyan-blue: #29B6F6;
+            --light-cyan: #4FC3F7;
+            --green: #4CAF50;
+            --light-green: #66BB6A;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .logo-icon {
+            width: 450px;
+            height: 70px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: transparent;
+            mix-blend-mode: multiply;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan-blue);
+        }
+
+        .back-link {
+            background: transparent;
+            color: var(--cyan-blue);
+            border: 2px solid var(--cyan-blue);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--cyan-blue);
+            color: white;
+        }
+
+        /* Page Content */
+        .page-content {
+            min-height: 100vh;
+            padding-top: 120px;
+        }
+
+        .page-hero {
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Payment Container */
+        .payment-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .payment-container {
+            background: linear-gradient(135deg, #f8fafe 0%, #e8f7ff 100%);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(41, 182, 246, 0.1);
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .payment-header h2 {
+            color: var(--dark-blue);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .payment-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Service Selection */
+        .service-selection {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-option {
+            border: 2px solid rgba(41, 182, 246, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: white;
+        }
+
+        .service-option:hover {
+            border-color: var(--cyan-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41, 182, 246, 0.1);
+        }
+
+        .service-option.selected {
+            border-color: var(--cyan-blue);
+            background: rgba(41, 182, 246, 0.05);
+        }
+
+        .service-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .service-title {
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .service-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--cyan-blue);
+            font-size: 1.3rem;
+        }
+
+        /* Customer Info */
+        .customer-info {
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            color: var(--dark-blue);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 16px;
+            border: 2px solid rgba(41, 182, 246, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cyan-blue);
+        }
+
+        /* Payment Method */
+        .payment-method {
+            margin-bottom: 30px;
+        }
+
+        #card-element {
+            padding: 12px 16px;
+            border: 2px solid rgba(41, 182, 246, 0.2);
+            border-radius: 10px;
+            background: white;
+        }
+
+        #card-element.StripeElement--focus {
+            border-color: var(--cyan-blue);
+        }
+
+        #card-errors {
+            color: #dc3545;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Order Summary */
+        .order-summary {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(41, 182, 246, 0.2);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .summary-row.total {
+            border-top: 2px solid rgba(41, 182, 246, 0.2);
+            padding-top: 15px;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+        }
+
+        /* Payment Button */
+        .pay-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cyan-blue) 50%, var(--green) 100%);
+            color: white;
+            border: none;
+            padding: 18px 24px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(41, 182, 246, 0.3);
+        }
+
+        .pay-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(41, 182, 246, 0.4);
+        }
+
+        .pay-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Status Messages */
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--cyan-blue);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            color: var(--green);
+            background: rgba(76, 175, 80, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            display: none;
+            text-align: center;
+            color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* Trust Indicators */
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo-icon {
+                width: 300px;
+                height: 50px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .payment-container {
+                padding: 30px 20px;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://assets.website-files.com/64955b5e3612255246200782/64955b778332194639d6796c_logo-trans-black.png" alt="Corpus Localization Logo" class="logo-img">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="back-link">← Back to Website</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Secure Payment Processing</h1>
+                <p>Complete your professional translation order with our secure payment system</p>
+            </div>
+        </section>
+
+        <section class="payment-section">
+            <div class="container">
+                <div class="payment-container">
+                    <div class="payment-header">
+                        <h2>Complete Your Translation Order</h2>
+                        <p>Secure payment processing with 24-hour delivery guarantee</p>
+                    </div>
+
+                    <form id="payment-form">
+                        <div class="service-selection">
+                            <h3 class="section-title">Select Translation Service</h3>
+                            
+                            <div class="service-option" onclick="selectService('standard', 24.95, 'Standard Certified Translation')">
+                                <input type="radio" name="service" value="standard" id="standard">
+                                <div class="service-title">Standard Certified Translation</div>
+                                <div class="service-description">24-hour delivery • USCIS/IRCC certified • Official certification letter included</div>
+                                <div class="service-price">$24.95 per page</div>
+                            </div>
+
+                            <div class="service-option" onclick="selectService('rush', 37.43, 'Rush Translation (12 hours)')">
+                                <input type="radio" name="service" value="rush" id="rush">
+                                <div class="service-title">Rush Translation (12 hours)</div>
+                                <div class="service-description">Express 12-hour delivery • Priority processing • All standard features included</div>
+                                <div class="service-price">$37.43 per page</div>
+                            </div>
+
+                            <div class="service-option" onclick="selectService('premium', 49.90, 'Same Day Premium')">
+                                <input type="radio" name="service" value="premium" id="premium">
+                                <div class="service-title">Same Day Premium (2-6 hours)</div>
+                                <div class="service-description">Emergency processing • Senior translator • Phone consultation included</div>
+                                <div class="service-price">$49.90 per page</div>
+                            </div>
+                        </div>
+
+                        <div class="customer-info">
+                            <h3 class="section-title">Customer Information</h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customer-name">Full Name *</label>
+                                    <input type="text" id="customer-name" name="customerName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="customer-email">Email Address *</label>
+                                    <input type="email" id="customer-email" name="customerEmail" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="page-count">Number of Pages *</label>
+                                    <select id="page-count" name="pageCount" required onchange="updateTotal()">
+                                        <option value="">Select number of pages</option>
+                                        <option value="1">1 page</option>
+                                        <option value="2">2 pages</option>
+                                        <option value="3">3 pages</option>
+                                        <option value="4">4 pages</option>
+                                        <option value="5">5 pages</option>
+                                        <option value="6">6 pages</option>
+                                        <option value="7">7 pages</option>
+                                        <option value="8">8 pages</option>
+                                        <option value="9">9 pages</option>
+                                        <option value="10">10 pages</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="document-type">Document Type</label>
+                                    <select id="document-type" name="documentType">
+                                        <option value="">Select document type</option>
+                                        <option value="birth-certificate">Birth Certificate</option>
+                                        <option value="marriage-certificate">Marriage Certificate</option>
+                                        <option value="diploma">Diploma/Degree</option>
+                                        <option value="transcript">University Transcript</option>
+                                        <option value="passport">Passport</option>
+                                        <option value="other">Other Document</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-summary">
+                            <h3 class="section-title">Order Summary</h3>
+                            <div class="summary-row">
+                                <span>Service:</span>
+                                <span id="selected-service">Please select a service</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Pages:</span>
+                                <span id="page-display">0 pages</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Price per page:</span>
+                                <span id="price-per-page">$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Amount:</span>
+                                <span id="total-price">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-method">
+                            <h3 class="section-title">Payment Information</h3>
+                            <div id="card-element">
+                                <!-- Stripe Elements will create form elements here -->
+                            </div>
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+
+                        <div class="trust-indicators">
+                            <div class="trust-indicator">🔒 SSL Encrypted</div>
+                            <div class="trust-indicator">💳 Stripe Secure</div>
+                            <div class="trust-indicator">✅ 100% Guarantee</div>
+                            <div class="trust-indicator">⚡ 24hr Delivery</div>
+                        </div>
+
+                        <button type="submit" id="submit-button" class="pay-button" disabled>
+                            Complete Secure Payment
+                        </button>
+                    </form>
+
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <h3>Processing your payment...</h3>
+                        <p>Please wait while we securely process your translation order.</p>
+                    </div>
+
+                    <div class="success-message" id="success-message">
+                        <h3>Payment Successful! 🎉</h3>
+                        <p>Thank you for your order. You will receive a confirmation email shortly with next steps.</p>
+                        <p style="margin-top: 15px;"><strong>We'll begin your translation immediately and deliver within the selected timeframe.</strong></p>
+                    </div>
+
+                    <div class="error-message" id="error-message">
+                        <h3>Payment Failed</h3>
+                        <p id="error-text">There was an error processing your payment. Please try again.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51RvsZkEdKCkypqlM1MOdOXZ629bBganVKAqkIqSwysfNQOa2PxmhwgrcGvkmwfYuHz7ifgMrFTbCRfKr7KFoQxZ200vNNwfzmq');
+        const elements = stripe.elements();
+
+        // Create card element
+        const cardElement = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    color: '#263238',
+                    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+                    '::placeholder': {
+                        color: '#aab7c4',
+                    },
+                },
+            },
+        });
+
+        cardElement.mount('#card-element');
+
+        // Handle real-time validation errors from the card Element
+        cardElement.on('change', ({error}) => {
+            const displayError = document.getElementById('card-errors');
+            if (error) {
+                displayError.textContent = error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Global variables
+        let selectedService = null;
+        let selectedPricePerPage = 0;
+        let selectedServiceName = '';
+
+        // Service selection function
+        function selectService(service, pricePerPage, serviceName) {
+            // Remove previous selection
+            document.querySelectorAll('.service-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option. We need to find the right element if called programmatically
+            const targetElement = document.getElementById(service).parentElement;
+            if (targetElement) {
+                 targetElement.classList.add('selected');
+                 targetElement.querySelector('input[type="radio"]').checked = true;
+            }
+            
+            // Update global variables
+            selectedService = service;
+            selectedPricePerPage = pricePerPage;
+            selectedServiceName = serviceName;
+            
+            // Update UI
+            updateTotal();
+            checkFormValid();
+        }
+
+        function updateTotal() {
+            const pageCount = parseInt(document.getElementById('page-count').value) || 0;
+            
+            if (selectedServiceName) {
+                document.getElementById('selected-service').textContent = selectedServiceName;
+                document.getElementById('price-per-page').textContent = `$${selectedPricePerPage.toFixed(2)}`;
+            }
+            
+            document.getElementById('page-display').textContent = `${pageCount} page${pageCount !== 1 ? 's' : ''}`;
+            
+            const total = pageCount * selectedPricePerPage;
+            document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+            
+            checkFormValid();
+        }
+
+        function checkFormValid() {
+            const pageCount = document.getElementById('page-count').value;
+            const customerName = document.getElementById('customer-name').value;
+            const customerEmail = document.getElementById('customer-email').value;
+            
+            const isValid = selectedService && pageCount && customerName && customerEmail;
+            document.getElementById('submit-button').disabled = !isValid;
+        }
+
+        // Add event listeners
+        document.getElementById('page-count').addEventListener('change', updateTotal);
+        document.getElementById('customer-name').addEventListener('input', checkFormValid);
+        document.getElementById('customer-email').addEventListener('input', checkFormValid);
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+            const pageCount = parseInt(document.getElementById('page-count').value);
+            const customerName = document.getElementById('customer-name').value;
+            const customerEmail = document.getElementById('customer-email').value;
+            const documentType = document.getElementById('document-type').value;
+            
+            if (!selectedService || !pageCount || !customerName || !customerEmail) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const totalAmount = pageCount * selectedPricePerPage;
+
+            // Show loading state
+            document.getElementById('payment-form').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error-message').style.display = 'none';
+
+
+            try {
+                // Create payment intent
+                const response = await fetch('/api/create-payment-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        amount: totalAmount,
+                        customerEmail: customerEmail,
+                        customerName: customerName,
+                        description: `${selectedServiceName} - ${pageCount} page${pageCount !== 1 ? 's' : ''} - ${documentType || 'Document'}`,
+                        serviceType: selectedService
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (data.error || !response.ok) {
+                    throw new Error(data.error || 'Failed to create payment intent.');
+                }
+
+                // Confirm payment
+                const result = await stripe.confirmCardPayment(data.clientSecret, {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            name: customerName,
+                            email: customerEmail,
+                        },
+                    }
+                });
+
+                if (result.error) {
+                    throw new Error(result.error.message);
+                } else {
+                    // Payment succeeded
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                }
+            } catch (error) {
+                // Show error
+                console.error('Payment Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('error-text').textContent = error.message;
+                document.getElementById('payment-form').style.display = 'block';
+            }
+        });
+
+        // Pre-fill form from URL parameters on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const name = params.get('name');
+            const email = params.get('email');
+            const pages = params.get('pages');
+            const speed = params.get('speed');
+            const type = params.get('type');
+
+            if (name) document.getElementById('customer-name').value = name;
+            if (email) document.getElementById('customer-email').value = email;
+            if (pages) document.getElementById('page-count').value = pages;
+            if (type) {
+                // Try to match the passed type with an option value
+                const docTypeSelect = document.getElementById('document-type');
+                const option = Array.from(docTypeSelect.options).find(opt => type.toLowerCase().includes(opt.value.replace('-', ' ')));
+                if(option) docTypeSelect.value = option.value;
+            }
+            
+            if (speed) {
+                if (speed === 'standard') {
+                    selectService('standard', 24.95, 'Standard Certified Translation');
+                } else if (speed === 'rush') {
+                    selectService('rush', 37.43, 'Rush Translation (12 hours)');
+                } else if (speed === 'same-day') {
+                    selectService('premium', 49.90, 'Same Day Premium');
+                }
+            }
+            
+            // Initial check in case all fields are pre-filled
+            checkFormValid();
+        });
+
+    </script>
+</body>
+</html>
